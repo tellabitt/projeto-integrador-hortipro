@@ -77,3 +77,57 @@ h3 {
   color: #fff;
 }
 
+@media (max-width: 992px) {
+  .nossaHorta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .mercearia {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .produto {
+    margin-bottom: 5%;
+    min-width: auto;
+    align-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .nossaHorta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .mercearia {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .produto {
+    margin-bottom: 5%;
+    min-width: fit-content;
+  }
+
+  .produto img {
+    width: fit-content;
+    justify-content: center;
+    column-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .produto img {
+    width: fit-content;
+    justify-content: center;
+    column-width: 50%;
+  }
+}
+
