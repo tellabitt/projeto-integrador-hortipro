@@ -43,6 +43,7 @@ footer {
 .footerLinks ul {
   list-style: none;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .footerLinks ul li a {
@@ -63,8 +64,8 @@ footer {
 }
 
 .socialNetworks img {
-  width: 20px;
-  height: 20px;
+  width: 33px;
+  height: 33px;
 }
 
 .footerLinks a {
@@ -80,16 +81,23 @@ footer {
   flex-direction: column;
   justify-content: center;
   font-size: large;
+  color: white;
 }
 
-.newslatter input {
-  width: 190px;
-  font-size: medium;
-  padding-left: 2px;
-}
+
+
 
 .newslatter button {
   width: 90px;
+}
+
+footer .newslatter input {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 50%;
+  height: 30px;
+  border: 1px solid #e6ecf0;
+  text-align: center;
 }
 
 @media screen and (max-width: 830px) {
@@ -103,15 +111,48 @@ footer {
     align-items: center;
     padding-bottom: 20px;
     padding-top: 20px;
+    color: aliceblue;
   }
+
   footer .newslatter input {
     margin-bottom: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    border: 1px solid #e6ecf0;
+    text-align: center;
   }
   .logoFooter p {
     margin-right: 10px;
+  
   }
 
   .footerLinks ul li {
     margin-bottom: 15px;
   }
+}
+
+.logoFooter p{
+  color:antiquewhite;
+  font-family: "Poppins", sans-serif;
+}
+
+.newslatter button{
+  min-height: 30px;
+  width: 150px;
+  border-radius: 30px;
+  border: 0px;
+  background-color: rgb(37, 211, 102); 
+  font-family: "Roboto Condensed", sans-serif;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  }
+        
+  label {
+    /* font-weight: bold; */
+    font-size: 1em;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
 }
