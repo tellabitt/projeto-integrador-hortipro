@@ -8,12 +8,13 @@ class usersController {
       where: {
         username,
       },
+      attributes: ["username", "password"],
     });
     const isEqualPassword = await bcrypt.compare(password, user.password);
     if (!isEqualPassword) {
       return res.json({ message: "Username or password is invalid" });
     }
-    res.json(user);
+    res.json({ user: user.username });
   }
 
   static async register(req, res) {
