@@ -21,7 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(publicDir));
 
 app.get("/", async (req, res) => {
-  res.sendFile("home.html");
+  res.sendFile("home.html", { root: publicDir });
+});
+
+app.get("/cadastro", async (req, res) => {
+  res.sendFile("Novo-cadastro.html", { root: publicDir });
 });
 
 app.use("/users", userRoutes);
