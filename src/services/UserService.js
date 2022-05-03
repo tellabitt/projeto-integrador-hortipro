@@ -1,13 +1,8 @@
-const UserModel = require("../database/models/Usuario");
-const { v4: uuidv4 } = require("uuid");
+const User = require("../database/models/Usuario");
 
 const UserService = {
-  userList: () => {
-    return UserModel.findAll();
-  },
-  createUser: (email, senha, ativo, catalogo_oferta, termo_de_aceite) => {
-    const newUser = new UserModel({
-      v4: uuidv4(),
+  createUser: async (email, senha, ativo, catalogo_oferta, termo_de_aceite) => {
+    const newUser = await User.create({
       email,
       senha,
       ativo,
