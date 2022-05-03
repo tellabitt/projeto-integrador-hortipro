@@ -12,22 +12,23 @@
       <img src="./img/logo.png" alt="logo" />
     </section>
 
+    <button onclick="tst()">teste</button>
     <div id="main-container">
       <h1>Cadastre-se</h1>
       <h2>Insira suas informações para criar uma conta</h2>
 
-      <form class="info">
-        <div class="box">
-          <label>Você é:</label>
-          <br />
-          <input type="radio" id="client" name="same" />
-          <label for="client" id="client-label">Sou Cliente</label>
-          <input type="radio" id="productor" name="same" value="productor" />
-          <label for="productor" id="productor-label">Sou Produtor</label>
-        </div>
-      </form>
-
       <form id="register-form">
+        <div class="info">
+          <div class="box">
+            <label>Você é:</label>
+            <br />
+            <input type="radio" id="client" name="same" value="client" />
+            <label for="client" id="client-label">Sou Cliente</label>
+            <input type="radio" id="productor" name="same" value="productor" />
+            <label for="productor" id="productor-label">Sou Produtor</label>
+          </div>
+        </div>
+
         <div class="full-box">
           <label for="email">E-mail</label>
           <input
@@ -106,7 +107,6 @@
             id="phone"
             name="phone"
             placeholder="(xx) xxxx-xxxx"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
           />
         </div>
 
@@ -117,7 +117,6 @@
             id="cell-phone"
             name="cell-phone"
             placeholder="(xx) xxxxx-xxxx"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
           />
         </div>
 
@@ -191,7 +190,8 @@
         <div class="full-box">
           <input type="checkbox" name="agreement" id="agreement" required />
           <label for="agreement" id="agreement-label"
-            >Eu li e aceito os <a href="./termos-e-condicoes.html">Termos de uso</a></label
+            >Eu li e aceito os
+            <a href="./termos-e-condicoes.html">Termos de uso</a></label
           >
         </div>
 
@@ -209,5 +209,7 @@
     </div>
 
     <p class="error-validation template"></p>
+
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
