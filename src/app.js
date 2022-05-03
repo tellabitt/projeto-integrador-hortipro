@@ -7,6 +7,7 @@ const { errors } = require("celebrate");
 
 const userRoutes = require("./routes/users.routes");
 const { publicDir } = require("../config");
+const db = require("./database/models");
 
 const app = express();
 
@@ -18,12 +19,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(publicDir));
 
-app.get("/", async (req, res) => {
-  res.sendFile("home.html", { root: publicDir });
-});
+app.get("/", userRoutes);
 
-app.get("/cadastro", async (req, res) => {
-  res.sendFile("Novo-cadastro.html", { root: publicDir });
+app.get("/usuarios", async (req, res) => {
+  const users = await db.sequelize.query("SELECT * FROM USUARIO");
+  res.send(users);
 });
 
 app.use("/users", userRoutes);

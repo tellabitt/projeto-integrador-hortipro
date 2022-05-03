@@ -1,11 +1,11 @@
 const UserService = require("../services/UserService");
-const database = require("../database/index");
+const database = require("../database/models");
 
 const controller = {
-  create: (req, res) => {
+  create: async (req, res) => {
     const { email, senha, ativo, catalogo_oferta, termo_de_aceite } = req.body;
 
-    const usuario = UserService.createUser(
+    const usuario = await UserService.createUser(
       email,
       senha,
       ativo,

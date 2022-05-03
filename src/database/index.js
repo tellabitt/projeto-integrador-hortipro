@@ -1,13 +1,16 @@
-const { Sequelize } = require("sequelize");
+const Sequelize = require("sequelize");
 const Produtor = require("./models/Produtor");
 const Cliente = require("./models/Cliente");
-const databseConfig = require("./config/config");
+const Usuario = require("./models/Usuario");
+const databaseConfig = require("./config/config");
 
-const sequelize = new Sequelize(databseConfig);
+const models = [Usuario, Cliente, Produtor];
 
-const models = [Cliente, Produtor, sequelize];
+const connection = new Sequelize(databaseConfig);
 
-// models.forEach((model) => model(sequelize));
-models.forEach((model) => model.associate && model.associate(sequelize.models));
+models.forEach((model) => model.init(connection));
+models.forEach(
+  (model) => model.associate && model.associate(connection.models)
+);
 
-module.exports = sequelize;
+module.exports = connection;
