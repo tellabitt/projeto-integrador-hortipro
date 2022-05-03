@@ -1,6 +1,4 @@
 "use strict";
-
-require("dotenv").config();
 const express = require("express");
 const compression = require("compression");
 const cors = require("cors");
@@ -29,7 +27,7 @@ app.get("/cadastro", async (req, res) => {
 });
 
 app.use("/users", userRoutes);
-
+app.post("/cadastro", userRoutes);
 app.use(errors());
 
 app.use(async (err, req, res, next) => {
