@@ -1,15 +1,22 @@
 const { Router } = require("express");
 const controller = require("../controllers/UserController");
-const path = require('path');
 
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/home.html'));
+  res.render('home')
+});
+
+router.get("/login", (req, res) => {
+  res.render('login')
 });
 
 router.post("/cadastro", controller.create);
 
-router.post("/login", controller.login);
+router.post("/logar", controller.logar);
+
+router.post("/finalizacao-compra", (req, res) => {
+  res.render('finalizacao-compra')
+});
 
 module.exports = router;
