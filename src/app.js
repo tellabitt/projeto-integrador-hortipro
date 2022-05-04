@@ -28,6 +28,7 @@ app.get("/usuarios", async (req, res) => {
 
 app.use("/users", userRoutes);
 app.post("/cadastro", userRoutes);
+app.post("/login", userRoutes);
 app.use(errors());
 
 app.use(async (err, req, res, next) => {
