@@ -1,5 +1,5 @@
 "use strict";
-const path = require('path');
+const path = require("path");
 const express = require("express");
 const compression = require("compression");
 const cors = require("cors");
@@ -13,8 +13,8 @@ const db = require("./database/models");
 const app = express();
 
 // View Engine Setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 app.use(compression());
 app.use(helmet());
@@ -33,9 +33,11 @@ app.get("/usuarios", async (req, res) => {
 
 app.use("/users", userRoutes);
 app.post("/cadastro", userRoutes);
+app.delete("/usuarios/:id", userRoutes);
 app.get("/login", userRoutes);
 app.post("/logar", userRoutes);
 app.post("/finalizacao-compra", userRoutes);
+
 app.use(errors());
 
 app.use(async (err, req, res, next) => {

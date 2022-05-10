@@ -16,7 +16,7 @@ class UserModel extends Model {
           validate: {
             len: {
               args: [3, 255],
-              msg: "Email deve ter entre 3 e 255 caracteres",
+              msg: "Seu email deve conter mais de 3 caracteres",
             },
           },
         },
@@ -25,8 +25,8 @@ class UserModel extends Model {
           allowNull: false,
           validate: {
             len: {
-              args: [3, 255],
-              msg: "Senha deve ter entre 3 e 255 caracteres",
+              args: [7, 255],
+              msg: "Sua senha deve coonter 8 ou mais caracteres",
             },
           },
         },
