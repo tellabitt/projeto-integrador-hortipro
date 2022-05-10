@@ -4,19 +4,20 @@ const controller = require("../controllers/UserController");
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.render('home')
+  res.render("home");
 });
 
 router.get("/login", (req, res) => {
-  res.render('login')
+  res.render("login");
 });
 
 router.post("/cadastro", controller.create);
+router.delete("/usuarios/:id", controller.delete);
 
 router.post("/logar", controller.logar);
 
 router.post("/finalizacao-compra", (req, res) => {
-  res.render('finalizacao-compra')
+  res.render("finalizacao-compra");
 });
 
 module.exports = router;
