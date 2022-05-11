@@ -15,6 +15,7 @@ const UserService = {
     return newUser;
   },
 
+
   deleteUser: async (id) => {
     const user = await User.destroy({
       where: {

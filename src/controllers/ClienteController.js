@@ -1,19 +1,43 @@
-const UserService = require("../services/UserService");
+const ClientService = require("../services/ClientService");
+const Client = require("../database/models/Cliente");
 
-const controller = {
-  create: (req, res) => {
-    const { email, senha, ativo, catalogo_oferta, termo_de_aceite } = req.body;
+const clientController = {
+  create: async (req, res) => {
+    const {
+      cpf,
+      nome,
+      sobrenome,
+      telefone,
+      celular,
+      id_usuario,
+      id_cliente,
+      id_endereco,
+    } = req.body;
 
-    const usuario = UserService.createUser(
-      email,
-      senha,
-      ativo,
-      catalogo_oferta,
-      termo_de_aceite
-    );
+    try {
+      if (await Client.findOne({ where: { cpf: cpf } }))
+        return res.status(400).send({ error: "User cpf already exists" });
+      if (await Client.findOne({ where: { id_cliente: id_cliente } }))
+        return res.status(400).send({ error: "Client id already exists" });
 
-    return res.json(usuario);
+      const cliente = await ClientService.createClient(
+        cpf,
+        nome,
+        sobrenome,
+        telefone,
+        celular,
+        id_usuario,
+        id_cliente,
+        id_endereco
+      );
+
+      return res.send({
+        cliente,
+      });
+    } catch (error) {
+      return res.status(400).send({ error: "Registration failed" });
+    }
   },
 };
 
-module.exports = controller;
+module.exports = clientController;

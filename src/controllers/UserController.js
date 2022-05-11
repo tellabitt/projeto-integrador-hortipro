@@ -3,7 +3,7 @@ const database = require("../database/models");
 const { deleteUser } = require("../services/UserService");
 const User = require("../database/models/Usuario");
 
-const controller = {
+const userController = {
   create: async (req, res) => {
     const { email, senha, ativo, catalogo_oferta, termo_de_aceite } = req.body;
 
@@ -65,4 +65,4 @@ const controller = {
   },
 };
 
-module.exports = controller;
+module.exports = userController;
