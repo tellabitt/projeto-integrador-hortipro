@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "dev": "nodemon src/server.js --signal SIGTERM",
     "test": "node ./teste.js"
   },
   "keywords": [],
@@ -25,14 +25,13 @@
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
-    "node": "^17.2.0",
+    "nodemon": "^2.0.16",
     "pino": "^7.11.0",
     "pino-pretty": "^7.6.1",
     "sequelize": "^6.19.0",
     "sqlite3": "^5.0.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
     "sequelize-cli": "^6.4.1"
   },
   "repository": {

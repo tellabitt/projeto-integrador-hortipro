@@ -1,5 +1,7 @@
 const { Router } = require("express");
-const controller = require("../controllers/UserController");
+const userController = require("../controllers/UserController");
+const clientController = require("../controllers/ClienteController");
+const productorController = require("../controllers/ProdutorController");
 
 const router = Router();
 
@@ -11,10 +13,13 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.post("/cadastro", controller.create);
-router.delete("/usuarios/:id", controller.delete);
+router.post("/cadastro", userController.create);
+router.post("/cadastro/cliente", clientController.create);
+router.post("/cadastro/produtor", productorController.create);
 
-router.post("/logar", controller.logar);
+router.delete("/usuarios/:id", userController.delete);
+
+router.post("/logar", userController.logar);
 
 router.post("/finalizacao-compra", (req, res) => {
   res.render("finalizacao-compra");

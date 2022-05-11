@@ -33,6 +33,8 @@ app.get("/usuarios", async (req, res) => {
 
 app.use("/users", userRoutes);
 app.post("/cadastro", userRoutes);
+app.post("/cadastro/cliente", userRoutes);
+app.post("/cadastro/produtor", userRoutes);
 app.delete("/usuarios/:id", userRoutes);
 app.get("/login", userRoutes);
 app.post("/logar", userRoutes);

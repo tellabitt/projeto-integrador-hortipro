@@ -1,19 +1,45 @@
-const UserService = require("../services/UserService");
+const ProductorService = require("../services/ProductorService");
+const Produtor = require("../database/models/Produtor");
 
-const controller = {
-  create: (req, res) => {
-    const { email, senha, ativo, catalogo_oferta, termo_de_aceite } = req.body;
+const productorController = {
+  create: async (req, res) => {
+    const {
+      cpf,
+      nome,
+      sobrenome,
+      telefone,
+      celular,
+      id_endereco,
+      id_usuario,
+      id_produtor,
+      rua,
+      cep,
+    } = req.body;
 
-    const usuario = UserService.createUser(
-      email,
-      senha,
-      ativo,
-      catalogo_oferta,
-      termo_de_aceite
+    // try {
+    if (await Produtor.findOne({ where: { cpf: cpf } }))
+      return res.status(400).send({ error: "User cpf already exists" });
+
+    const produtor = await ProductorService.createProductor(
+      cpf,
+      nome,
+      sobrenome,
+      telefone,
+      celular,
+      id_endereco,
+      id_usuario,
+      id_produtor,
+      rua,
+      cep
     );
 
-    return res.json(usuario);
+    return res.send({
+      produtor,
+    });
+    // } catch (err) {
+    //   return res.status(400).send({ error: "Registration failed" });
+    // }
   },
 };
 
-module.exports = controller;
+module.exports = productorController;
