@@ -1,8 +1,16 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 footer{
     width: 100%;
     background-color: #626A0A;
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
+    height: 210px;
 }
 
 
@@ -15,14 +23,13 @@ footer{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
     color: #BCBC2A;
-    margin-left: 10px;
-    margin-bottom: 1px;
-    margin-top: 57px;
-
+    margin-left: 3px;
+    margin-bottom: 46px;
+    margin-top: 33px;
 }
 .newslatter {
-    margin-left: 282px;
-    margin-top: -223px;
+    margin-left: 24.5%;
+    margin-top: -18%;
 }
 
 .socialNetworks{
@@ -30,22 +37,24 @@ footer{
 }
 
 .socialNetworks img {
-    /* opacity: 0%; */
-
     width: 50px;
     margin-left: 100px;
-    margin-left: 92px;
-}
+} 
 
-.social{
+ .social{
     margin: 50px;
+    margin-top: 15px;
 }
 
 .termos {
-    margin-left: 1115px;
-    margin-top: -78px;
+    margin-left: 1190px;
+    margin-top: -67px;
     list-style: none;
-    
+   
+}
+
+.sobre-nos{
+    margin-left: 90px;
 }
 
 .termos li{
@@ -61,15 +70,15 @@ footer{
   
 }
 
-.sobre-nos{
+/* .sobre-nos{
     margin-left: 130px;
-}
+} */
 
-.politica{
+/* .politica{
     margin-left: 39px;
-}
+}  */
 
-footer .newslatter input {
+ footer .newslatter input {
     margin-bottom: 14px;
     border-radius: 89px;
     width: 372px;
@@ -83,7 +92,7 @@ footer .newslatter input {
 
 
 label {
-    /* font-weight: bold; */
+    
     font-size: 20px;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -109,3 +118,62 @@ label {
     margin-left: 5px;
    
 }
+
+
+@media (max-width: 768px){
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    width: 100%;
+    background-color: #626A0A;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    height: 210px;
+}
+    .logo-footer img{
+        width: 0px;
+        
+    }
+
+    .termos {
+        margin-left: 331px;
+        margin-top: -35px;
+        list-style: none;
+       
+    }
+
+    .sobre-nos{
+        margin-left: 90px;
+    }
+
+    
+
+    .copyright{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    color: #BCBC2A;
+    margin-left: 3px;
+    margin-bottom: -213px;
+    margin-top: 146px;
+    
+    }
+
+    .newslatter{
+        margin-left: 19%;
+        margin-top: 10px;
+    }
+     .social{
+        margin: -20px;
+        margin-top: 15px;
+        display: inline;
+    } 
+    .social img{
+        
+        margin: 20px;
+    }
+    }
