@@ -10,7 +10,7 @@ const produtos = [
   },
   {
     imagem:
-      "https://conteudo.imguol.com.br/c/entretenimento/24/2020/09/15/banana-1600197261350_v2_4x3.jpg",
+      "http://static3.tcdn.com.br/img/img_prod/450860/muda_de_pera_d_agua_ou_europeia_1m_enxertada_676_1_20190611093602.jpg",
     nome: "Pera",
     preco: "R$ 10,00",
     estoque: 10,
@@ -19,7 +19,7 @@ const produtos = [
   },
   {
     imagem:
-      "https://conteudo.imguol.com.br/c/entretenimento/24/2020/09/15/banana-1600197261350_v2_4x3.jpg",
+      "https://i.uai.com.br/D9ROReAWLV6SZTg7u6iSVZ0HwlY=/imgsapp2.uai.com.br/app/noticia_133890394703/2015/12/22/186528/20151221160405658577i.jpg",
     nome: "Uva",
     preco: "R$ 10,00",
     estoque: 10,
@@ -28,7 +28,7 @@ const produtos = [
   },
   {
     imagem:
-      "https://conteudo.imguol.com.br/c/entretenimento/24/2020/09/15/banana-1600197261350_v2_4x3.jpg",
+      "https://d3ugyf2ht6aenh.cloudfront.net/stores/746/397/products/laranja-valenciana1-d6176b7996359e3cb815221646757150-1024-1024.jpg",
     nome: "Laranja",
     preco: "R$ 10,00",
     estoque: 10,
@@ -37,8 +37,8 @@ const produtos = [
   },
   {
     imagem:
-      "https://conteudo.imguol.com.br/c/entretenimento/24/2020/09/15/banana-1600197261350_v2_4x3.jpg",
-    nome: "Chocolate",
+      "http://static3.tcdn.com.br/img/img_prod/450860/muda_de_maca_gala_climas_frios_ou_amenos_1m_enxertadas_566_1_20190611093558.jpg",
+    nome: "Maçã",
     preco: "R$ 10,00",
     estoque: 10,
     quantidade: 0,
@@ -46,7 +46,7 @@ const produtos = [
   },
   {
     imagem:
-      "https://conteudo.imguol.com.br/c/entretenimento/24/2020/09/15/banana-1600197261350_v2_4x3.jpg",
+      "https://portaldoorganico.com.br/wp-content/uploads/2021/04/morango.jpg",
     nome: "Morango",
     preco: "R$ 10,00",
     estoque: 10,
@@ -134,25 +134,39 @@ atualizarCarrinho = () => {
       containerCarrinho.innerHTML +=
         `
         <div class="nav-cart-item">
+        <input class="check-cart" type="checkbox" name="" id="` +
+        val.id +
+        `">
           <img src="` +
         val.imagem +
         `" alt="` +
         val.imagem +
         `" class="nav-cart-item-imagem">
-          <h3>"` +
+          <h3>` +
         val.nome +
         `</h3>
-        <div class="item-quantidade">
-          <button class="item-menos">-</button>
-          <div class="item-quantidade">` +
+          <p>` +
+        val.preco +
+        `</p>
+        <input class="lista_produtos-produto-input" type="number" name="" id="" value="` +
         val.quantidade +
-        `</div>
-          <button class="item-mais">+</button>
-          </div>
-        </div>
+        `" min="1">
       `;
     }
   });
+
+  const calcular_total = () => {
+    let total = 0;
+    produtos.map((val) => {
+      total += val.preco * val.quantidade;
+      console.log(val.preco)
+    });
+    containerCarrinho.innerHTML += ` <p>Total: R$ `+ total +`</p>`
+  }
+  calcular_total();
+
+  containerCarrinho.innerHTML += `
+    <button type="button" class="lista_produtos-produto-button">Finalizar compra</button>`
 };
 
 let links = document.querySelectorAll(".lista_produtos-produto-button");
@@ -164,3 +178,4 @@ for (var i = 0; i < links.length; i++) {
     atualizarCarrinho();
   });
 }
+
