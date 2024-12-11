@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include("../partials/head") %>
+    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="shortcut icon" href="/css/logoHortiproPNG.png">
+    <title>Perfil</title>
+</head>
+
+<%- include("../partials/header") %>
+
+  <div class="titulo">
+    <h1>Perfil</h1>
+  </div>
+
+  <div class="main">
+    <div id="fotoPerfil">
+      <img src="/img/perfil.jpg">
+    </div>
+    <div id="nome">
+      <h1>Usuário</h1>
+    </div>
+
+    <div id="seuEmail">
+      <a>Seu email</a>
+      <input type="e-mail" id="email" placeholder="exemplo@gmail.com" name="email" />
+    </div>
+
+    <div id="numero">
+      <a>Número</a>
+      <input type="tel" id="numero1" placeholder="(12) 9345-6789" name="number" />
+    </div>
+
+
+    <div id="cidade">
+      <a>Cidade</a>
+      <input type="text" id="cidade" placeholder="Campinas - SP" name="city" />
+
+    </div>
+
+    <div id="idade">
+      <a>Idade</a>
+      <input type="text" id="idade" placeholder="34 anos" name="age" />
+    </div>
+
+    <button type="submit">Editar</button>
+  </div>
+
+  <%- include("../partials/footer") %>
+
+    <script src="./js/index.js"></script>
+    </body>
+
+</html>

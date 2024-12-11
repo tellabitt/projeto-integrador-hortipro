@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastre seu Produto</title>
+  <link href="./css/stylesariane.css" rel="stylesheet">
+  <%- include("../partials/head") %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <%- include("../partials/header") %>
+    <h1 class="title">Cadastre seu produto</h1>
+    <section class="fundo grid-produto">
+      <div></div>
+      <div>
+        <img class="logohorti" src="./img/imghorti.png">
+        <form method="POST" action="/cadastro-produtos" class="form-cadastro-produto" enctype="multipart/form-data">
+          <label>
+            <span>Nome do Produto</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Tipo do Produto</span>
+            <select name="type" class="select-produto">
+              <option value="horta">Horta</option>
+              <option value="mercearia">Mercearia</option>
+            </select>
+          </label>
+          <label>
+            <span>Local de Produção</span>
+            <input name="local" type="text" required>
+          </label>
+          <label>
+            <span>Quantidade de produto no estoque</span>
+            <input name="quantity" type="number" required>
+          </label>
+          <label class="preco">
+            <span>Preço</span>
+            <input name="price" type="number" required>
+          </label>
+          <label>
+            <span>Descrição do Produto</span>
+            <textarea name="description" id="formação" cols="30" rows="10"></textarea>
+          </label>
+          <label class="adicionar_imagem">
+            <span>Adicionar imagem</span>
+            <input name="file" type="file">
+          </label>
+          <button class="button" type="submit ">Registrar</button>
+        </form>
+      </div>
+    </section>
+    <%- include("../partials/footer") %>
+</body>
+
+</html>
